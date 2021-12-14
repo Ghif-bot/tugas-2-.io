@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+        body {
+            background-color: green;
+            font-family: Poppins;
+            justify-content: center;
+        }
+        
+        .center {
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .content {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+        }
+        
+        .toggle {
+            width: 600px;
+            height: 400px;
+            position: relative;
+        }
+        
+        #tombol {
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        
+        #efek {
+            width: 250px;
+            height: 180px;
+            padding: 6px;
+            position: relative;
+            background: black;
+            color: white;
+        }
+        
+        #efek h3 {
+            margin: 0;
+            padding: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="toggle">
+            <div id="efek" class="ui-widget-content ui-corner-all ">
+                <h3 class="ui-widget-header ui-corner-all">Animate</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati atque exercitationem, inventore iusto ipsum incidunt provident.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <button id="tombol" class="ui-state-default ui-corner-all center">Toggle Effect</button>
+
+    <script>
+        $(function() {
+            var state = true;
+            $("#tombol").on("click", function() {
+                if (state) {
+                    $("#efek").animate({
+                        backgroundColor: "#ff0000",
+                        marginLeft: -80,
+                        color: "#fff",
+                        width: 700,
+                    }, 1000);
+                } else {
+                    $("#efek").animate({
+                        backgroundColor: "#fff",
+                        marginLeft: 0,
+                        color: "#000",
+                        width: 500,
+                    }, 1000);
+                }
+                state = !state;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
